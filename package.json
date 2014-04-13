@@ -1,0 +1,25 @@
+{
+  "name": "node-bot",
+  "version": "0.0.0",
+  "description": "A simple yet powerful IRC bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot",
+    "irc"
+  ],
+  "author": "Massimiliano Marcon",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.6.0",
+    "gulp-jshint": "^1.5.3",
+    "jshint-stylish": "^0.1.5",
+    "gulp-nodemon": "^1.0.2"
+  },
+  "dependencies": {
+    "irc": "^0.3.6",
+    "winston": "^0.7.3"
+  }
+}

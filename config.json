@@ -1,0 +1,4 @@
+{
+    "protocol": "repl",
+    "modules": ["time"]
+}
