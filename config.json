@@ -1,4 +1,7 @@
 {
     "protocol": "repl",
-    "modules": ["time"]
+    "modules": [
+        "time",
+        "duckduckgo"
+    ]
 }

@@ -3,6 +3,7 @@ var config = require('./config'),
 
 var modules = {
     'time': require('./lib/modules/time'),
+    'duckduckgo': require('./lib/modules/duckduckgo')
 };
 
 var protocols = {

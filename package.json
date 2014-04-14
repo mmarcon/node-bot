@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "irc": "^0.3.6",
-    "winston": "^0.7.3"
+    "winston": "^0.7.3",
+    "request": "^2.34.0"
   }
 }
