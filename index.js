@@ -1,6 +1,5 @@
 var config = require('./config'),
-    Core = require('./lib/core'),
-    Noop = require('./lib/modules/noop');
+    Core = require('./lib/core');
 
 var modules = {
     'time': require('./lib/modules/time'),
@@ -14,10 +13,13 @@ var loadedModules = config.modules.map(function(moduleName){
     return new modules[moduleName]();
 });
 
-loadedModules.push(new Noop());
-
 var core = new Core(
     new protocols[config.protocol](),
     loadedModules);
+
+process.on('SIGINT', function() {
+    core.stop();
+    process.exit(0);
+});
 
 core.start();
