@@ -1,21 +1,20 @@
 var config = require('./config'),
-    Core = require('./lib/core');
+    Core = require('./lib/core'),
+    Module = require('./lib/modules/module'),
+    Protocol = require('./lib/protocols/Protocol'),
+    util = require('util');
 
-var modules = {
-    'time': require('./lib/modules/time'),
-    'duckduckgo': require('./lib/modules/duckduckgo')
-};
+var ProtocolConstructor = require(config.protocol)(Protocol, util.inherits);
 
-var protocols = {
-    'repl': require('./lib/protocols/repl')
-};
+var protocol = new ProtocolConstructor();
 
-var loadedModules = config.modules.map(function(moduleName){
-    return new modules[moduleName]();
+var loadedModules = config.modules.map(function(modulePath){
+    var ModuleConstructor = require(modulePath)(Module, util.inherits);
+    return new ModuleConstructor();
 });
 
 var core = new Core(
-    new protocols[config.protocol](),
+    protocol,
     loadedModules);
 
 process.on('SIGINT', function() {

@@ -1,7 +1,7 @@
 {
-    "protocol": "repl",
+    "protocol": "./lib/protocols/repl",
     "modules": [
-        "time",
-        "duckduckgo"
+        "./lib/modules/time",
+        "./lib/modules/duckduckgo"
     ]
 }
