@@ -6,3 +6,4 @@ node_modules
 cloud.json
 *.log
 local
+config.json
