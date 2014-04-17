@@ -21,6 +21,7 @@
   "dependencies": {
     "irc": "^0.3.6",
     "winston": "^0.7.3",
-    "request": "^2.34.0"
+    "request": "^2.34.0",
+    "markov": "0.0.7"
   }
 }

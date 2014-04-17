@@ -2,6 +2,7 @@ var config = require('./config'),
     Core = require('./lib/core'),
     Module = require('./lib/modules/module'),
     Protocol = require('./lib/protocols/Protocol'),
+    logger = require('./lib/logger'),
     util = require('util');
 
 var ProtocolConstructor = require(config.protocol)(Protocol, util.inherits);
@@ -9,7 +10,7 @@ var ProtocolConstructor = require(config.protocol)(Protocol, util.inherits);
 var protocol = new ProtocolConstructor();
 
 var loadedModules = config.modules.map(function(modulePath){
-    var ModuleConstructor = require(modulePath)(Module, util.inherits);
+    var ModuleConstructor = require(modulePath)(Module, util.inherits, logger);
     return new ModuleConstructor();
 });
 

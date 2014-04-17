@@ -2,6 +2,7 @@
     "protocol": "./lib/protocols/repl",
     "modules": [
         "./lib/modules/time",
-        "./lib/modules/duckduckgo"
+        "./lib/modules/duckduckgo",
+        "./lib/modules/markov"
     ]
 }
