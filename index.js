@@ -11,7 +11,7 @@ try {
     var protocol = new ProtocolConstructor();
 
     var loadedModules = config.modules.map(function(modulePath){
-        var ModuleConstructor = require(modulePath)(Module, util.inherits, logger);
+        var ModuleConstructor = require(modulePath)(Module, util.inherits, logger, config);
         return new ModuleConstructor();
     });
 
@@ -26,5 +26,5 @@ try {
 
     core.start();
 } catch(e) {
-    console.error('Something wrong here. Did you add config.json?')
+    console.error('Something wrong here. Did you add config.json?');
 }
